@@ -3,7 +3,7 @@ import pymongo
 from pymongo import MongoClient
 import time
 from datetime import datetime
-import isodate
+
 mongo_url_01="mongodb://admin:bmwee8097218@140.118.122.115:30415/"
 def Catchdata(DB, Collection,start_time,end_time):
     global mongo_url_01
