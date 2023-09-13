@@ -5,10 +5,11 @@ import time
 from datetime import datetime
 
 mongo_url_01="mongodb://admin:bmwee8097218@140.118.122.115:30415/"
+mongo_url_02="mongodb://administrator:administrator@140.118.122.115:30415/"
 def Catchdata(DB, Collection,start_time,end_time):
     global mongo_url_01
     try:
-        conn = MongoClient(mongo_url_01) 
+        conn = MongoClient(mongo_url_02) 
        
         db = conn[DB]
         
@@ -35,6 +36,5 @@ timestamp=1680278400
 start_time = datetime.fromtimestamp(timestamp)
 timestamp=1682870399
 end_time= datetime.fromtimestamp(timestamp)
-data=Catchdata("AP_test","Collect_Client",start_time,end_time)
-print(data[0])
+data=Catchdata("Client","Controller4",start_time,end_time)
 insertdata("AP_test","April_Client",data)
